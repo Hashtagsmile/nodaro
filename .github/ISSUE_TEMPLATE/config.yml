@@ -1,0 +1,9 @@
+blank_issues_enabled: true
+
+contact_links:
+  - name: Roadmap & scope
+    url: https://github.com/Hashtagsmile/nodaro/blob/main/ROADMAP.md
+    about: Read what is planned, what is out of scope, and how to suggest improvements.
+  - name: Contributing guide
+    url: https://github.com/Hashtagsmile/nodaro/blob/main/CONTRIBUTING.md
+    about: How to run tests, build, and open pull requests.

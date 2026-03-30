@@ -2,19 +2,40 @@
   "name": "@nodaro/cli",
   "version": "0.1.0",
   "description": "npx nodaro — zero-config MongoDB admin panel",
+  "keywords": [
+    "mongodb",
+    "admin",
+    "cli",
+    "developer-tools"
+  ],
+  "license": "MIT",
   "bin": {
     "nodaro": "dist/index.js"
   },
   "type": "commonjs",
   "main": "dist/index.js",
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hashtagsmile/nodaro.git",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/Hashtagsmile/nodaro/issues"
+  },
+  "homepage": "https://github.com/Hashtagsmile/nodaro#readme",
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "dev": "tsx src/index.ts",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "express": "^5.1.0",
-    "nodaro": "*"
+    "nodaro": "^0.1.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",

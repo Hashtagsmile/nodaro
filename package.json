@@ -1,8 +1,16 @@
 {
   "name": "nodaro-workspace",
   "private": true,
+  "engines": {
+    "node": ">=18"
+  },
   "workspaces": [
     "packages/*",
     "examples/*"
-  ]
+  ],
+  "scripts": {
+    "test": "npm --workspace nodaro run test",
+    "build": "npm --workspace packages/core run build && npm --workspace packages/client run build",
+    "build:examples": "node scripts/build-examples.mjs"
+  }
 }

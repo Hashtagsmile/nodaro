@@ -3,3 +3,6 @@ node_modules/
 *.log
 .env
 .env.*
+
+# CLI build output — rebuilt by `npm run build` / `prepublishOnly` (do not commit)
+packages/cli/dist/
