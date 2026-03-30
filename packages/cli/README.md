@@ -1,22 +1,19 @@
-# @nodaro/cli
+# `@nodaro/cli`
 
-CLI entrypoint for Nodaro.
+Command-line entrypoint for **`npx nodaro`**.
 
-Starts an Express server, mounts Nodaro at root, and optionally opens the browser automatically.
+## What it does
 
-## Local development
+Starts a small Express server, mounts the [`nodaro`](../core) API and static UI, and opens the admin panel in your browser (unless disabled).
+
+## Development
+
+From the monorepo root:
 
 ```bash
-cd packages/cli
-npm run dev
+npm --workspace packages/core run build
+npm --workspace packages/client run build
+npm --workspace @nodaro/cli run build
 ```
 
-## Environment variables
-
-- `NODARO_PORT` (default: `4000`)
-- `NODARO_URI` (preferred Mongo URI)
-- `MONGO_URI` (fallback)
-
-## Runtime flags
-
-- `--no-open` disables auto-open browser behavior
+On npm, the CLI depends on the **`nodaro`** package (`^0.1.0` range; bump in lockstep when releasing—see root [`RELEASING.md`](../../RELEASING.md)).

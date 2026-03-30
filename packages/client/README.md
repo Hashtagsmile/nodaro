@@ -1,21 +1,21 @@
-# nodaro-client
+# `nodaro-client`
 
-React frontend for Nodaro.
+React + Vite frontend for the Nodaro admin UI.
 
-The UI is backend-driven and consumes relative API paths. In embed mode, API base is injected at runtime via `window.__NODARO_API_BASE__`.
+## Build output
+
+Production builds write static assets to **`packages/core/public`**, which the `nodaro` package serves in both CLI and embed modes.
+
+From the monorepo root:
+
+```bash
+npm --workspace packages/client run build
+```
 
 ## Development
 
 ```bash
-cd packages/client
-npm run dev
+npm --workspace packages/client run dev
 ```
 
-## Build
-
-```bash
-cd packages/client
-npm run build
-```
-
-Build output goes to `packages/core/public` so `setupNodaro` can serve the UI.
+Point the dev server at a running Nodaro API (see root [README](../../README.md) and `examples/express-app`).

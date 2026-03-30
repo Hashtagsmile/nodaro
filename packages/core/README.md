@@ -25,6 +25,7 @@ interface NodaroOptions {
 - `POST /connect`
 - `GET /connect/status`
 - `GET /collections`
+- `GET /collections/counts`
 - `GET /collections/:collection/schema`
 - `POST /documents/query`
 - `POST /documents/search`
@@ -41,3 +42,7 @@ npm run build
 ```
 
 Static UI files are served from `packages/core/public` and are produced by `packages/client`.
+
+## Tests
+
+See the root [README](../../README.md#tests). Integration tests live under `packages/core/src/**/*.integration.test.ts`.

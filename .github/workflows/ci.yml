@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build core (TypeScript)
+        run: npm --workspace packages/core run build
+
+      - name: Build client (Vite → packages/core/public)
+        run: npm --workspace packages/client run build
+
+      - name: Integration tests (core)
+        run: npm --workspace nodaro run test
+
+      - name: Build example apps
+        run: npm run build:examples
+
+      - name: Verify npm pack (publishable tarballs)
+        run: |
+          npm pack --workspace=nodaro --dry-run
+          npm pack --workspace=@nodaro/cli --dry-run
