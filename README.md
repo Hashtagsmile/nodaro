@@ -22,15 +22,21 @@ You can run it in two ways:
 
 ## Why it exists
 
-Typical workflow:
+When you're building an MVP or a small app, you still need some way to look at your data.
 
-You’re building a feature.
-You need to check a few documents, tweak a value, maybe clean up some test data.
+Maybe to:
 
-MongoDB Compass works — but it’s not great for quick, repeatable flows.
-Admin frameworks exist — but they’re usually too heavy for MVPs or internal tools.
+- check if something saved correctly
+- fix a broken record
+- clean up test data
 
-Nodaro is built for that gap:
+You can use MongoDB Compass, but it’s slow for this kind of quick, repeated work.
+
+You can build an admin panel — but that’s extra code, routes, and UI you probably don’t want to spend time on. 
+
+There are tools that solve this too, but they usually come with setup, configuration, and more overhead than most MVPs need.
+
+Nodaro is built for that middle ground:
 
 > open it → connect → inspect → update → move on
 
