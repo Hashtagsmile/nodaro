@@ -1,0 +1,8 @@
+{
+  "name": "nodaro-workspace",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ]
+}
