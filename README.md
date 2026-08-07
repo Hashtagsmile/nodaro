@@ -1,5 +1,9 @@
 # Nodaro
 
+[![CI](https://github.com/Hashtagsmile/nodaro/actions/workflows/ci.yml/badge.svg)](https://github.com/Hashtagsmile/nodaro/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Node](https://img.shields.io/badge/node-%3E%3D18-brightgreen)](package.json)
+
 A zero-config MongoDB admin panel for local development and small internal tools.
 
 ---
