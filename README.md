@@ -14,8 +14,12 @@ Nodaro is a simple web UI on top of MongoDB.
 
 You can run it in two ways:
 
-- **CLI** — `npx nodaro`
+- **CLI** — a single command that boots the API, the UI and the Mongo connection
 - **Embedded** — `setupNodaro(app)` inside your existing Express app
+
+> **Not yet on npm.** Nodaro is pre-release, so `npx nodaro` does not resolve yet
+> and the CLI is run from a clone for now — see [Quick start](#quick-start).
+> The published-package flow is tracked in [`ROADMAP.md`](ROADMAP.md).
 
 **Stack**
 
@@ -76,9 +80,21 @@ Nodaro is built for that middle ground:
 
 ### CLI
 
+Until the package is published, run the CLI from a clone:
+
 ```bash
-npx nodaro
+git clone https://github.com/Hashtagsmile/nodaro.git
+cd nodaro
+npm install
+npm --workspace packages/core run build
+npm --workspace packages/client run build
+npm --workspace packages/cli run build
+node packages/cli/dist/index.js
 ```
+
+Nodaro starts on `http://localhost:4000`; connect your database from the UI.
+
+Once published this becomes `npx nodaro`.
 
 Optional environment variables:
 
@@ -213,7 +229,7 @@ For reporting vulnerabilities, see [`SECURITY.md`](SECURITY.md).
 ### CLI mode
 
 ```text
-npx nodaro
+nodaro (CLI)
   → starts Express
   → mounts Nodaro API
   → serves Nodaro UI
